@@ -1,0 +1,126 @@
+:root {
+  --black: #050505;
+  --yellow: #efdf84;
+  --white: #f3efec;
+}
+.part-one {
+  display: flex;
+  transition: 0.1s;
+  height: 100vh;
+}
+.part-one:hover {cursor: pointer;}
+
+.part-one video {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+.text-part-one {
+  width: 100%;
+  height: 100vh;
+  text-align: start;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  top: 450px;
+  padding: 10px;
+  transition: 0.1s;
+}
+.text-part-one h1 {
+  font-size: 3em;
+  color: white;
+}
+.text-part-one p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+}
+.text-part-one button {
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  background-color: black;
+  margin-top: 7px;
+  font-size: 0.9em;
+  transition: 0.1s;
+  border: 1px solid black;
+}
+.text-part-one button:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: black;
+  transition: 0.1s;
+  border: 1px solid black;
+}
+
+.part-two {
+  background-image: url(../img/bk-bolsa.jpg), linear-gradient(to bottom, rgba(54, 54, 54, 0.304), rgba(13, 13, 13, 0.354));
+  background-blend-mode: overlay;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+.part-two:hover {
+  cursor: pointer;
+}
+.part-two h1 {
+  font-size: 3em;
+}.part-two h1 p {
+  font-size: 1.2em;
+}
+.part-two h1, p {
+  color: white;
+}
+.part-two a {
+  padding: 5px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .text-part-one {
+    top: 300px;
+    text-align: center;
+    margin: 0px 5px 0px 5px;
+  }
+  .text-part-one h1 {
+    font-size: 1.7em;
+  }
+
+  .part-two h1 {
+    font-size: 1.7em;
+  }
+  .text-part-one p {
+    font-size: 0.96em;
+  }
+  .text-part-one button {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+  .text-part-one video {
+    margin: 0px 8px 0px 8px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .part-one {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .text-part-one {
+    width: 100%;
+    height: 100vh;
+  }
+}

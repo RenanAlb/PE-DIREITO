@@ -1,0 +1,282 @@
+:root {
+  --black: #050505;
+  --yellow: #efdf84;
+  --white: #fffffff6;
+}
+
+body {
+  background-color: var(--white);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+.container {
+  background-color: var(--white);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  left: 0;
+}
+.logo {
+  transition: 0.1s;
+  padding: 10px 20px;
+}
+.logo img {
+  width: 100px;
+}
+.logo:hover {
+  cursor: pointer;
+}
+
+.container-menu {
+  width: 100%;
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-menu nav {
+  transition: 0.1s;
+  border: none;
+}
+.container-menu nav ul li {
+  display: inline-block;
+}
+.container-menu nav {
+  z-index: 1;
+}
+.container-menu nav ul li a {
+  text-decoration: none;
+  font-weight: 100;
+  color: black;
+  transition: 0.1s;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icons span {
+  zoom: 95%;
+  margin: 0px 4px;
+}
+.icons span:hover {
+  cursor: pointer;
+}
+
+.blur {
+  width: 100%;
+  height: 92.7vh;
+  position: fixed;
+  top: 67px;
+  background-color: #05050565;
+  backdrop-filter: blur(5px);
+  left: 0;
+  display: none;
+  z-index: 1;
+}
+
+#menu {
+  display: none;
+}
+
+#content-main {
+  width: 100%;
+  height: 100vh;
+}
+
+
+.search {
+  width: calc(100% - 180px);
+  height: 92.5vh;
+  right: 0;
+  top: 62px;
+  position: fixed;
+  justify-content: space-between;
+  background-color: var(--white);
+  z-index: 1;
+  display: none;
+  padding: 10px;
+  transition: 0.1s;
+}
+
+.search input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.search button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.bag-div {
+  top: 62px;
+  z-index: 1;
+  display: none;
+  width: calc(100% - 180px);
+  height: 92.5vh;
+  background-color: var(--white);
+  padding: 10px;
+  position: fixed;
+  right: 0;
+}
+.bag-div h1 {
+  font-size: 1.4em;
+}
+
+@media screen and (max-width: 850px) {
+  nav {
+    background-color: var(--white);
+    width: calc(100% - 180px);
+    height: 90.5vh;
+    display: none;
+    position: absolute;
+    top: 66px;
+    right: 0;
+    padding: 15px;
+    z-index: 1;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+  }
+  nav ul li {
+    margin: 20px 0px;
+  }
+  nav ul li a {
+    color: rgb(0, 0, 0);
+  }
+  nav ul li a:hover {
+    border-bottom: 1px solid black;
+  }
+  .container-menu {
+    justify-content: end;
+  }
+
+  #content-main {
+    margin-top: 67px;
+  }
+
+  body {
+    margin-top: 68px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  nav ul li a {
+    font-size: 0.85em;
+    padding: 0px 9px;
+    text-decoration: none;
+  }
+  nav ul li a:hover {
+    border-bottom: 1px solid black;
+  }
+
+  .search {
+    top: 68px;
+  }
+  .bag-div {
+    top: 68px;
+  }
+  body {
+    margin-top: 68px;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  nav ul li a {
+    color: black;
+    font-size: 0.9em;
+    padding: 0px 20px;
+  }
+  nav ul li a:hover {
+    border-bottom: 1px solid black;
+  }
+
+  #content-main {
+    margin-top: 67px;
+  }
+  .search {
+    top: 67px;
+  }
+  .bag-div {
+    top: 67px;
+  }
+
+  body {
+    margin-top: 68px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    padding: 5px 8px;
+  }
+  .logo img {
+    /* width: 86px; */
+    width: 90px;
+  }
+
+  nav {
+    top: 65px;
+    width: calc(100% - 106px);
+    height: 92.9vh;
+  }
+  nav ul li a {
+    font-size: 1.2em;
+  }
+
+  .blur {
+    top: 51px;
+  }
+
+  #content-main {
+    margin-top: 52px;
+  }
+
+  .search {
+    width: calc(100% - 106px);
+    top: 65px;
+  }
+
+  .bag-div {
+    width: calc(100% - 106px);
+    top: 65px;
+  }
+
+  body {
+    margin: 65px 8px 0px 8px;
+    position: relative;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -14.2px;
+  }
+  .container {
+    padding: 6px 0px;
+  }
+}

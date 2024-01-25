@@ -1,0 +1,129 @@
+
+.container-moda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.produto {
+  transition: 0.1s;
+  width: 33.3%;
+  text-align: center;
+  padding: 0px 0px 10px 0px;
+}
+.produto:hover {cursor: pointer;}
+.produto p {
+  color: black;
+  margin-top: 4px;
+  padding: 5px 10px;
+}
+
+.img-fundo-moda {
+  width: 100%;
+  height: 500px;
+  background-image: url(../img/f1.jpg);
+  background-size: cover;
+  background-position: center center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.img-fundo-moda h1 {
+  color: white;
+  font-size: 3em;
+}
+
+.filtros {
+  width: 100%;
+  height: 80px;
+}
+
+#favorite-produto, #ver {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  margin: 10px;
+  padding: 5px;
+  transition: 0.1s;
+  zoom: 80%;
+}
+
+#favorite-produto:hover, #ver:hover {
+  background-color: rgb(253, 253, 253);
+  color: black;
+  transition: 0.1s;
+}
+
+
+
+
+.container-dados-produto-moda {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+}
+.container-dados-produto-moda p {
+  color: black;
+}
+.img-produto-moda {
+  width: 50%;
+  height: 700px;
+  background-size: cover;
+}
+.dados-produto-moda {
+  background-color: #F3EFEC;
+  width: 50%;
+  height: 300px;
+  padding: 10px;
+}
+.div-flutuante a {
+  text-decoration: none;
+  color: rgb(81, 81, 81);
+}
+.div-flutuante a:hover {
+  color: black;
+}
+.div-flutuante a span {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .produto {
+    width: 50%;
+  }
+  .container-dados-produto-moda {
+    flex-wrap: wrap;
+  }
+  .img-produto-moda {
+    background-position: center top;
+    position: fixed;
+    top: 130px;
+    z-index: -1;
+    width: calc(100% - 16px);
+    height: 500px;
+    margin: 0px 5px;
+  }
+  .dados-produto-moda {
+    padding: 10px;
+    width: 100%;
+    margin-top: 600px;
+  }
+  .div-flutuante a {
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .produto {
+    width: 100%;
+  }
+  .div-flutuante a span {
+    padding: 8px;
+  }
+}
