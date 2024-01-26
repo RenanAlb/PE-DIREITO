@@ -1,6 +1,6 @@
 "use strict";
 const main = document.getElementById('content-main');
-const links = document.querySelectorAll('.link-page');
+const links = document.querySelectorAll('.link-page'); // seleciono todos os links no index.html e aqui faço a separação das páginas
 links.forEach(link => {
     link.addEventListener('click', (event) => {
         event.preventDefault();
@@ -11,6 +11,7 @@ links.forEach(link => {
         }
         const tipo = link.getAttribute('id');
         pagesHtml(String(tipo));
+        renderizarProdutos(String(tipo)); // renderiza os produtos pelo tipo
     });
 });
 const pagesHtml = (tipo) => {
@@ -31,7 +32,5 @@ const pagesHtml = (tipo) => {
     }
 };
 const windowTop = () => {
-    window.addEventListener('load', () => {
-        window.scrollTo(0, 0);
-    });
+    window.scrollTo(0, 0);
 };

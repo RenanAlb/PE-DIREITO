@@ -8,12 +8,10 @@ iconMenu.addEventListener('click', () => {
     menu.style.display = 'none'
     iconMenu.innerHTML = 'density_medium'
     blurbk.style.display = 'none'
-    dadosProdutoModa.style.zIndex = '1'
   } else {
     menu.style.display = 'block'
     iconMenu.innerHTML = 'close'
     blurbk.style.display = 'block'
-    dadosProdutoModa.style.zIndex = '-1'
   }
 })
 
