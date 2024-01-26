@@ -3,7 +3,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/look.jpg',
+        img: './img/look.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -14,7 +14,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/look1.jpg',
+        img: './img/look1.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -25,7 +25,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa4.jpg',
+        img: './img/roupa4.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -36,7 +36,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa5.jpg',
+        img: './img/roupa5.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -47,7 +47,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa8.jpg',
+        img: './img/roupa8.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -58,7 +58,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa9.jpg',
+        img: './img/roupa9.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -69,7 +69,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa10.jpg',
+        img: './img/roupa10.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -80,7 +80,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa11.jpg',
+        img: './img/roupa11.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -91,7 +91,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa12.jpg',
+        img: './img/roupa12.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -102,7 +102,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa19.jpg',
+        img: './img/roupa19.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -113,7 +113,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa20.jpg',
+        img: './img/roupa20.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -124,7 +124,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa15.jpg',
+        img: './img/roupa15.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -135,7 +135,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa16.jpg',
+        img: './img/roupa16.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -146,7 +146,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa17.jpg',
+        img: './img/roupa17.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -157,7 +157,7 @@ const modaArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: '../img/roupa18.jpg',
+        img: './img/roupa18.jpg',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
