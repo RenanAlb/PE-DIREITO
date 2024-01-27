@@ -9,16 +9,15 @@ const renderizarProdutos = (tipo) => {
         for (let i = 0; i < array.length; i++) {
             containerProdutosArray.innerHTML += `
         <section class="produto" id="${array[i].id}" data-tipo="${tipo}">
-          <div class="img-produto-${i}">
-            <span id="ver" class="material-symbols-outlined">
-              photo_library
-            </span>
-            <span id="favorite-produto" class="material-symbols-outlined">
-              favorite
-            </span>
+          <span id="favorite-produto" class="material-symbols-outlined">
+            favorite
+          </span>
+          <div class="img-produto-${i}" id="img-produto-style">
           </div>
-          <p>${array[i].nome}</p>
-          <p>R$ ${array[i].custo.toFixed(2).replace('.', ',')}</p>
+          <section class="dados">
+            <p>${array[i].nome}</p>
+            <p>R$ ${array[i].custo.toFixed(2).replace('.', ',')}</p>
+          </section>
         </section>
       `;
             main.appendChild(containerProdutosArray);
@@ -26,12 +25,14 @@ const renderizarProdutos = (tipo) => {
             // Estilos da imagem dos produtos
             imgProduto.style.backgroundImage = `url(${array[i].img})`;
             imgProduto.style.backgroundSize = 'cover';
-            imgProduto.style.backgroundPosition = 'center top';
+            imgProduto.style.backgroundPosition = 'center center';
             imgProduto.style.width = '100%';
-            imgProduto.style.height = '600px';
+            imgProduto.style.margin = 'auto';
             imgProduto.style.justifyContent = 'end';
             imgProduto.style.alignItems = 'start';
             imgProduto.style.display = 'flex';
+            //  const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            // const escala = screenWidth > 950 ? 0.8 : 1.0;
         }
     };
     // Separo os tipos dos produtos e adiciono o array devido para tal
@@ -42,6 +43,11 @@ const renderizarProdutos = (tipo) => {
     }
     else if (tipo === 'calcado') {
         array = calcadoArray;
+        content(array);
+        viewMore(array);
+    }
+    else if (tipo === 'bolsa') {
+        array = bolsaArray;
         content(array);
         viewMore(array);
     }
@@ -91,6 +97,9 @@ const viewMore = (array) => {
             }
             else if (array === modaArray) {
                 modaPage();
+            }
+            else if (array === bolsaArray) {
+                bolsaPage();
             }
         });
         windowTop();

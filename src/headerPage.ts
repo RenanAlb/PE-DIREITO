@@ -15,7 +15,7 @@ const dadosHeaderCalcado = {
 const dadosHeaderBolsa = {
   h1: 'BOLSAS',
   p: 'Bolsas incríveis para você contando com marcas exclusivas, VICTOR HUGO, SCHUTZ e muito mais.',
-  img: '../img/f1.jpg'
+  img: '../img/f3.jpg'
 }
 
 const buildHeader = (tipo: string) => {
@@ -49,6 +49,8 @@ const buildHeader = (tipo: string) => {
       h1ImgFundo.style.color = 'black'
       pImgFundo.style.color = 'black'
     } else if (tipo === 'bolsa') {
+      h1ImgFundo.style.color = 'white'
+      pImgFundo.style.color = 'white'
     }
   }
 

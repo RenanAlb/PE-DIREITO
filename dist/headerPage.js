@@ -4,17 +4,17 @@ headerPage.classList.add('header');
 const dadosHeaderModa = {
     h1: 'MODA',
     p: 'Looks incríveis para você contando com, vestidos, macacões, conjuntos e mais.',
-    img: './img/f1.jpg'
+    img: '../img/f1.jpg'
 };
 const dadosHeaderCalcado = {
     h1: 'CALÇADOS',
     p: 'Calçados incríveis para você contando com, sandálias, rasteirinhas, tênis e muito mais.',
-    img: './img/f2.jpg'
+    img: '../img/f2.jpg'
 };
 const dadosHeaderBolsa = {
     h1: 'BOLSAS',
     p: 'Bolsas incríveis para você contando com marcas exclusivas, VICTOR HUGO, SCHUTZ e muito mais.',
-    img: './img/f1.jpg'
+    img: '../img/f3.jpg'
 };
 const buildHeader = (tipo) => {
     const renderizarHeader = (dadosHeader) => {
@@ -41,6 +41,8 @@ const buildHeader = (tipo) => {
             pImgFundo.style.color = 'black';
         }
         else if (tipo === 'bolsa') {
+            h1ImgFundo.style.color = 'white';
+            pImgFundo.style.color = 'white';
         }
     };
     if (tipo === 'moda') {

@@ -26,6 +26,9 @@ const pagesHtml = (tipo: string) => {
     case 'calcado':
       calcadoPage()
     break
+    case 'bolsa':
+      bolsaPage()
+    break
     default:
       alert('Página não encontrada')
       main.innerHTML = 'Página não encontrada :('

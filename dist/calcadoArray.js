@@ -3,7 +3,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal1.jpg',
+        img: './img/cal1.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -14,7 +14,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal2.jpg',
+        img: './img/cal2.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -25,7 +25,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal3.jpg',
+        img: './img/cal3.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -36,7 +36,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal4.jpg',
+        img: './img/cal4.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -47,7 +47,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal5.jpg',
+        img: './img/cal5.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -58,7 +58,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal6.jpg',
+        img: './img/cal6.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -69,7 +69,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal7.jpg',
+        img: './img/cal17.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -80,7 +80,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal8.jpg',
+        img: './img/cal8.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -91,7 +91,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal9.jpg',
+        img: './img/cal9.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -102,7 +102,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal10.jpg',
+        img: './img/cal10.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -113,7 +113,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal11.jpg',
+        img: './img/cal11.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -124,7 +124,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal12.jpg',
+        img: './img/cal12.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -135,7 +135,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal13.jpg',
+        img: './img/cal13.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -146,7 +146,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal14.jpg',
+        img: './img/cal14.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,
@@ -157,7 +157,7 @@ const calcadoArray = [
     {
         nome: 'Roupa',
         custo: 500,
-        img: './img/cal15.jpg',
+        img: './img/cal15.png',
         estoque_atual: 3,
         estoque_fixo: 3,
         add_carrinho: 0,

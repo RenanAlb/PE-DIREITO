@@ -27,13 +27,16 @@ body {
   z-index: 1;
   left: 0;
 }
+
 .logo {
   transition: 0.1s;
   padding: 10px 20px;
 }
+
 .logo img {
   width: 100px;
 }
+
 .logo:hover {
   cursor: pointer;
 }
@@ -45,16 +48,17 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .container-menu nav {
   transition: 0.1s;
   border: none;
+  z-index: 1;
 }
+
 .container-menu nav ul li {
   display: inline-block;
 }
-.container-menu nav {
-  z-index: 1;
-}
+
 .container-menu nav ul li a {
   text-decoration: none;
   font-weight: 100;
@@ -67,10 +71,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .icons span {
   zoom: 95%;
   margin: 0px 4px;
 }
+
 .icons span:hover {
   cursor: pointer;
 }
@@ -95,7 +101,6 @@ body {
   width: 100%;
   height: 100vh;
 }
-
 
 .search {
   width: calc(100%);
@@ -133,10 +138,17 @@ body {
   left: 50%;
   transform: translate(-50%);
   top: 45px;
+  transition: 0.1s;
 }
 
-.search span {
-  display: none;
+.search button:hover {
+  cursor: pointer;
+  background-color: rgb(67, 67, 67);
+  transition: 0.1s;
+}
+
+.search span:hover {
+  cursor: pointer;
 }
 
 .bag-div {
@@ -149,44 +161,84 @@ body {
   padding: 10px;
   position: fixed;
   right: 0;
+  padding-top: 60px;
 }
+
+.bag-div span {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.bag-div span:hover {
+  cursor: pointer;
+}
+
 .bag-div h1 {
   font-size: 1.4em;
+}
+
+nav #close-menu {
+  display: none;
+}
+
+nav #close-menu:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 850px) {
   nav {
     background-color: var(--white);
     width: calc(100%);
-    height: 90.5vh;
+    height: 100vh;
     display: none;
     position: absolute;
-    top: 66px;
+    top: 0;
     right: 0;
     padding: 15px;
     z-index: 1;
   }
+
   nav ul {
+    padding: 40px 8px;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: end;
+    justify-content: start;
+    align-items: start;
   }
+
   nav ul li {
     margin: 20px 0px;
   }
+
   nav ul li a {
     color: rgb(0, 0, 0);
   }
+
   nav ul li a:hover {
     border-bottom: 1px solid black;
   }
+
+  nav span {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
   .container-menu {
     justify-content: end;
   }
 
   #content-main {
     margin-top: 67px;
+  }
+
+  .bag-div {
+    top: 0;
+  }
+
+  .search {
+    top: 0;
   }
 
   body {
@@ -200,19 +252,31 @@ body {
     padding: 0px 9px;
     text-decoration: none;
   }
+
   nav ul li a:hover {
     border-bottom: 1px solid black;
   }
 
   .search {
-    top: 68px;
+    padding: 80px 0px 0px 0px;
+    top: 0px;
   }
-  .bag-div {
-    top: 68px;
+
+  .search button {
+    top: 120px;
   }
+
   .search span {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
+
+  .bag-div {
+    top: 0px;
+  }
+
   body {
     margin-top: 68px;
   }
@@ -223,9 +287,6 @@ body {
     font-size: 1.4em;
   }
 
-  .search span {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 1060px) {
@@ -234,6 +295,7 @@ body {
     font-size: 0.9em;
     padding: 0px 20px;
   }
+
   nav ul li a:hover {
     border-bottom: 1px solid black;
   }
@@ -241,14 +303,21 @@ body {
   #content-main {
     margin-top: 67px;
   }
+
   .search {
     top: 67px;
   }
-  .search span {
-    display: none;
-  }
+
   .bag-div {
     top: 67px;
+  }
+
+  .bag-div span {
+    display: none;
+  }
+
+  .search span {
+    display: none;
   }
 
   body {
@@ -260,20 +329,21 @@ body {
   .logo {
     padding: 5px 8px;
   }
+
   .logo img {
-    /* width: 86px; */
     width: 90px;
   }
 
-  .search span {
-    display: none;
+  nav {
+    top: 0px;
+    width: calc(100%);
+    height: 100vh;
   }
 
-  nav {
-    top: 64px;
-    width: calc(100%);
-    height: 92.9vh;
+  nav ul {
+    padding: 40px 0px;
   }
+
   nav ul li a {
     font-size: 1.2em;
   }
@@ -291,6 +361,7 @@ body {
     top: 0px;
     padding-top: 60px;
   }
+
   .search button {
     top: 95px;
   }
@@ -299,12 +370,13 @@ body {
     position: absolute;
     right: 20px;
     top: 20px;
-    display: none;
+    display: block;
   }
 
   .bag-div {
     width: calc(100%);
-    top: 65px;
+    height: 100vh;
+    top: 0px;
   }
 
   body {
@@ -318,13 +390,28 @@ body {
     justify-content: center;
     margin-right: -14.2px;
   }
+
   .container {
     padding: 6px 0px;
   }
-}
 
-@media screen and (min-width: 500px) {
   .search span {
     display: block;
+    position: absolute;
+    top: 10;
+    right: 10;
+    z-index: 1;
   }
+}
+
+@media screen and (min-width: 501px) {
+  .search {
+    padding-top: 80px;
+    height: 400px;
+  }
+
+  .search button {
+    top: 120px;
+  }
+
 }

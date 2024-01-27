@@ -18,10 +18,12 @@ const controleSpan = () => {
     if (divSearch.style.display === 'block') {
         divSearch.style.display = 'none';
         blurbk.style.display = 'none';
+        bagDiv.style.display = 'none';
     }
     else {
         divSearch.style.display = 'block';
         blurbk.style.display = 'block';
+        bagDiv.style.display = 'none';
         construirSearch();
     }
 };
