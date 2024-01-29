@@ -11,6 +11,7 @@ let array: {
   id: number;
 }[]
 
+const carrinho: any = []
 
 const containerProdutosArray = document.createElement('div') as HTMLDivElement
 containerProdutosArray.classList.add('container-produtos-array')
@@ -67,16 +68,18 @@ const renderizarProdutos = (tipo: string):void => {
   if (tipo === 'moda') {
     array = modaArray
     content(array)
-    viewMore(array)
+    viewMore(array, tipo)
   } else if (tipo === 'calcado') {
     array = calcadoArray
     content(array)
-    viewMore(array)
+    viewMore(array, tipo)
   } else if (tipo === 'bolsa') {
     array = bolsaArray
     content(array)
-    viewMore(array)
+    viewMore(array, tipo)
   }
+
+  console.log('separação array', array)
 }
 
 // Após clicar no produto, aparece mais informações (materais, marca e etc)
@@ -90,7 +93,7 @@ const viewMore = (array:{
   desc: string;
   materias: string;
   id: number;
-}[]) => {
+}[], tipo: string) => {
   const produtos = document.querySelectorAll('.produto') as NodeListOf<HTMLDivElement>
 
   const divFlutuante = document.createElement('div') as HTMLDivElement
@@ -102,7 +105,7 @@ const viewMore = (array:{
     })
   })
 
-  const viewProduto = (item: number, array: {
+  const viewProduto = (id: number, array: {
     nome: string;
     custo: number;
     img: string;
@@ -128,10 +131,11 @@ const viewMore = (array:{
         </section>
         <section class="dados-produto">
           <h3>Detalhes do produto</h3>
-          <p>${array[item].nome}</p>
-          <p>R$ ${array[item].custo.toFixed(2).replace('.',',')}</p>
-          <p>${array[item].desc}</p>
-          ${array[item].materias}
+          <p>${array[id].nome}</p>
+          <p>R$ ${array[id].custo.toFixed(2).replace('.',',')}</p>
+          <p>${array[id].desc}</p>
+          ${array[id].materias}
+          <button class="add-produto" data-id="${array[id].id}" data-tipo="${tipo}">Adicionar ao carrinho</button>
         </section>
       </div>
     `
@@ -140,7 +144,7 @@ const viewMore = (array:{
     main.appendChild(divFlutuante)
 
     const imgProdutoModa = document.querySelector('.img-produto') as HTMLDivElement
-    imgProdutoModa.style.backgroundImage = `url(${array[item].img})`
+    imgProdutoModa.style.backgroundImage = `url(${array[id].img})`
 
     const voltar = document.querySelector('.voltar') as HTMLAnchorElement
 
@@ -154,6 +158,58 @@ const viewMore = (array:{
         bolsaPage()
       }
     })
+
+    const buttons = document.querySelectorAll('.add-produto') as NodeListOf<HTMLButtonElement>
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const idProduto = button.getAttribute('data-id')
+        adicionarProdutoCarrinho(Number(idProduto))
+      })
+    })
+    const adicionarProdutoCarrinho = (id: number): void => {
+      const filtrarRepetidos = carrinho.filter((item: { img: string }) => item.img === array[id].img)
+
+      console.log(filtrarRepetidos)
+
+      if (filtrarRepetidos.length === 0) {
+        array[id].estoque_atual--
+        array[id].add_carrinho++
+        carrinho.push({ ...array[id] })
+      } else {
+        const indexNoCarrinho = carrinho.findIndex((item: { img: string }) => item.img === array[id].img)
+
+        if (indexNoCarrinho !== -1) {
+          const produtoNoCarrinho = carrinho[indexNoCarrinho]
+
+          if (produtoNoCarrinho.estoque_atual < produtoNoCarrinho.estoque_fixo) {
+            if (produtoNoCarrinho.estoque_atual !== 0) {
+              produtoNoCarrinho.estoque_atual--
+              produtoNoCarrinho.add_carrinho++
+            } else {
+              alert('Estoque esgotado')
+            }
+          }
+        }
+      }
+      console.log(carrinho)
+
+      if (carrinho.length > 0) {
+        bagIcon.innerHTML = `
+          shopping_bag
+          <span class="notificar">
+            ${carrinho.length}
+          </span>
+        `
+      } else {
+        bagIcon.innerHTML = `
+          shopping_bag
+        `
+      }
+
+    }
+
+
     windowTop()
   }
 }

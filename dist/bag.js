@@ -9,9 +9,48 @@ const montarBagDiv = () => {
     </span>
     <h1>Meu carrinho</h1>
   `;
+    const produtosAdicionados = document.createElement('div');
+    produtosAdicionados.classList.add('produtos-adicionados-no-carrinho');
+    for (let i = 0; i < carrinho.length; i++) {
+        produtosAdicionados.innerHTML += `
+      <section>
+        <div class="img-${i}" id="img-carrinho">
+          <p>R$${carrinho[i].custo.toFixed(2).replace('.', ',')}</p>
+        </div>
+        <div>
+          <button class="subtrair" data-id="${carrinho[i].id}" data-produto="${carrinho[i].img}">-</button>
+            <p class="number">${carrinho[i].add_carrinho}</p>
+          <button class="somar">+</button>
+        </div>
+        <p id="nome">${carrinho[i].nome}</p>
+      </section>
+    `;
+        bagDiv.appendChild(produtosAdicionados);
+        main.appendChild(bagDiv);
+        const img = document.querySelector(`.img-${i}`);
+        img.style.backgroundImage = `url(${carrinho[i].img})`;
+        img.style.backgroundSize = 'cover';
+        img.style.backgroundPosition = 'center center';
+        img.style.width = '100px';
+        img.style.height = '150px';
+    }
+    bagDiv.appendChild(produtosAdicionados);
     main.appendChild(bagDiv);
     const closeBag = document.getElementById('close-bag');
     closeBag.addEventListener('click', controleBag);
+    const subtriar = document.querySelectorAll('.subtrair');
+    subtriar.forEach(item => {
+        item.addEventListener('click', () => {
+            const id = item.getAttribute('data-id');
+            const produto = item.getAttribute('data-produto');
+            executarSubtracao(Number(id), String(produto));
+        });
+    });
+};
+const executarSubtracao = (id, produto) => {
+    carrinho[id].estoque_atual++;
+    carrinho[id].add_carrinho--;
+    montarBagDiv();
 };
 const controleBag = () => {
     if (bagDiv.style.display === 'block') {

@@ -15,7 +15,7 @@
   height: 480px;
   text-align: center;
   padding: 0px 0px 10px 0px;
-  border: 1px solid rgba(194, 194, 194, 0.495);
+  border: 1px solid rgba(0, 0, 0, 0.062);
 }
 .produto:hover {cursor: pointer;}
 .produto p {
@@ -62,12 +62,43 @@
   transition: 0.1s;
 }
 
+.notificar {
+  position: absolute;
+  background-color: red;
+  font-size: 0.4em;
+  color: white;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  top: 23px;
+  right: 84px;
+  transition: 0.1s;
+}
+
 .container-dados-produto {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100vh;
   justify-content: space-around;
+}
+.dados-produto button {
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  color: white;
+  background-color: black;
+  transition: 0.1s;
+  font-size: 0.9em;
+}
+.dados-produto button:hover {
+  background-color: rgb(49, 49, 49);
+  transition: 0.1s;
+  cursor: pointer;
 }
 .container-dados-produto p {
   color: black;
@@ -102,6 +133,53 @@
   height: 100%;
 }
 
+.produtos-adicionados-no-carrinho section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.produtos-adicionados-no-carrinho section p {
+  color: black;
+}
+.produtos-adicionados-no-carrinho section #img-carrinho {
+  justify-content: start;
+  align-items: end;
+  display: flex;
+}
+.produtos-adicionados-no-carrinho section #img-carrinho p {
+  background-color: rgba(0, 0, 0, 0.817);
+  color: white;
+  font-size: 0.8em;
+  padding: 4px;
+}
+.produtos-adicionados-no-carrinho section {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+.produtos-adicionados-no-carrinho section div button {
+  width: 50px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.produtos-adicionados-no-carrinho section div button:hover {
+  cursor: pointer;
+}
+.produtos-adicionados-no-carrinho section div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.number {
+  font-size: 1.2em;
+}
+
+
 @media screen and (max-width: 1250px) {
   .produto {
     width: 25%;
@@ -133,6 +211,12 @@
   }
 }
 
+@media screen and (min-width: 850px) {
+  .notificar {
+    right: 50px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .div-flutuante a span {
     padding: 8px;
@@ -149,6 +233,12 @@
   #img-produto-style {
     transform: scale(0.7);
     height: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .notificar {
+    right: 69px;
   }
 }
 

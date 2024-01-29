@@ -7,7 +7,7 @@ const homePage = () => {
     main.innerHTML = '';
     partOne.innerHTML = `
     <section class="text-part-one">
-      <video src="../img/pd1.mp4" autoplay muted loop></video>
+      <video src="./img/pd1.mp4" autoplay muted loop></video>
       <h1>SEJA PÉ DIREITO</h1>
       <p>Seja um cliente Pé Direito e aproveite as novidades e benefícios</p>
       <button>Ver mais</button>

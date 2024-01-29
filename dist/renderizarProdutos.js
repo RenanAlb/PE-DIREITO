@@ -1,5 +1,6 @@
 "use strict";
 let array;
+const carrinho = [];
 const containerProdutosArray = document.createElement('div');
 containerProdutosArray.classList.add('container-produtos-array');
 const renderizarProdutos = (tipo) => {
@@ -39,21 +40,22 @@ const renderizarProdutos = (tipo) => {
     if (tipo === 'moda') {
         array = modaArray;
         content(array);
-        viewMore(array);
+        viewMore(array, tipo);
     }
     else if (tipo === 'calcado') {
         array = calcadoArray;
         content(array);
-        viewMore(array);
+        viewMore(array, tipo);
     }
     else if (tipo === 'bolsa') {
         array = bolsaArray;
         content(array);
-        viewMore(array);
+        viewMore(array, tipo);
     }
+    console.log('separação array', array);
 };
 // Após clicar no produto, aparece mais informações (materais, marca e etc)
-const viewMore = (array) => {
+const viewMore = (array, tipo) => {
     const produtos = document.querySelectorAll('.produto');
     const divFlutuante = document.createElement('div');
     divFlutuante.classList.add('div-flutuante');
@@ -62,7 +64,7 @@ const viewMore = (array) => {
             viewProduto(Number(item.getAttribute('id')), array);
         });
     });
-    const viewProduto = (item, array) => {
+    const viewProduto = (id, array) => {
         divFlutuante.style.display = 'block';
         divFlutuante.innerHTML = `
       <a href="#" class="voltar">
@@ -78,17 +80,18 @@ const viewMore = (array) => {
         </section>
         <section class="dados-produto">
           <h3>Detalhes do produto</h3>
-          <p>${array[item].nome}</p>
-          <p>R$ ${array[item].custo.toFixed(2).replace('.', ',')}</p>
-          <p>${array[item].desc}</p>
-          ${array[item].materias}
+          <p>${array[id].nome}</p>
+          <p>R$ ${array[id].custo.toFixed(2).replace('.', ',')}</p>
+          <p>${array[id].desc}</p>
+          ${array[id].materias}
+          <button class="add-produto" data-id="${array[id].id}" data-tipo="${tipo}">Adicionar ao carrinho</button>
         </section>
       </div>
     `;
         main.innerHTML = '';
         main.appendChild(divFlutuante);
         const imgProdutoModa = document.querySelector('.img-produto');
-        imgProdutoModa.style.backgroundImage = `url(${array[item].img})`;
+        imgProdutoModa.style.backgroundImage = `url(${array[id].img})`;
         const voltar = document.querySelector('.voltar');
         voltar.addEventListener('click', (event) => {
             event.preventDefault();
@@ -102,6 +105,51 @@ const viewMore = (array) => {
                 bolsaPage();
             }
         });
+        const buttons = document.querySelectorAll('.add-produto');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const idProduto = button.getAttribute('data-id');
+                adicionarProdutoCarrinho(Number(idProduto));
+            });
+        });
+        const adicionarProdutoCarrinho = (id) => {
+            const filtrarRepetidos = carrinho.filter((item) => item.img === array[id].img);
+            console.log(filtrarRepetidos);
+            if (filtrarRepetidos.length === 0) {
+                array[id].estoque_atual--;
+                array[id].add_carrinho++;
+                carrinho.push({ ...array[id] });
+            }
+            else {
+                const indexNoCarrinho = carrinho.findIndex((item) => item.img === array[id].img);
+                if (indexNoCarrinho !== -1) {
+                    const produtoNoCarrinho = carrinho[indexNoCarrinho];
+                    if (produtoNoCarrinho.estoque_atual < produtoNoCarrinho.estoque_fixo) {
+                        if (produtoNoCarrinho.estoque_atual !== 0) {
+                            produtoNoCarrinho.estoque_atual--;
+                            produtoNoCarrinho.add_carrinho++;
+                        }
+                        else {
+                            alert('Estoque esgotado');
+                        }
+                    }
+                }
+            }
+            console.log(carrinho);
+            if (carrinho.length > 0) {
+                bagIcon.innerHTML = `
+          shopping_bag
+          <span class="notificar">
+            ${carrinho.length}
+          </span>
+        `;
+            }
+            else {
+                bagIcon.innerHTML = `
+          shopping_bag
+        `;
+            }
+        };
         windowTop();
     };
 };
